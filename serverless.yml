@@ -1,0 +1,57 @@
+service:
+  name: fusion-lambdas
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: eu-central-1
+  environment:
+    STAGE: "${opt:stage, 'prod'}"
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - "lambda:InvokeFunction"
+        - "lambda:InvokeAsync"
+      Resource: "*"
+    - Effect: Allow
+      Action:
+        - "s3:PutObject"
+      Resource: "*"
+    - Effect: Allow
+      Action:
+        - "logs:*"
+      Resource: "*"
+package:
+  exclude:
+    - node_modules/puppeteer/.local-chromium/**
+    - node_modules/aws-sdk/**
+functions:
+  handler0:
+    handler: src/fusionHandler.handler
+    name: "handler0-${opt:stage, 'prod'}"
+    timeout: 60
+    events:
+      - schedule:
+          rate: rate(5 minutes)
+          enabled: true
+          input:
+            target: screenshot
+  handler1:
+    handler: src/fusionHandler.handler
+    name: "handler1-${opt:stage, 'prod'}"
+    timeout: 60
+    events:
+      - schedule:
+          rate: rate(5 minutes)
+          enabled: true
+          input:
+            target: screenshot
+  handler2:
+    handler: src/fusionHandler.handler
+    name: "handler2-${opt:stage, 'prod'}"
+    timeout: 60
+    events:
+      - schedule:
+          rate: rate(5 minutes)
+          enabled: true
+          input:
+            target: screenshot

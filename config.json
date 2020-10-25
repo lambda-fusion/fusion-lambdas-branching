@@ -1,0 +1,14 @@
+[
+  {
+    "entry": "handler0",
+    "lambdas": ["screenshot"]
+  },
+  {
+    "entry": "handler1",
+    "lambdas": ["resize"]
+  },
+  {
+    "entry": "handler2",
+    "lambdas": ["saveS3"]
+  }
+]
