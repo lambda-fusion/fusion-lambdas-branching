@@ -37,8 +37,13 @@ const internalHandler = async (event, context) => {
 
     console.log("successfully captured screenshot");
 
-    result = await fusion.invokeFunctionSync(
+    result1 = await fusion.invokeFunctionSync(
       { source: "screenshot", target: "resize", context, traceId },
+      base64img
+    );
+
+    result2 = await fusion.invokeFunctionSync(
+      { source: "screenshot", target: "resize2", context, traceId },
       base64img
     );
   } catch (error) {
@@ -48,7 +53,7 @@ const internalHandler = async (event, context) => {
       await browser.close();
     }
   }
-  return result;
+  return { result, result2 };
 };
 
 exports.handler = async (event, context, callback) => {
