@@ -9,6 +9,10 @@
   },
   {
     "entry": "handler2",
+    "lambdas": ["resize2"]
+  },
+  {
+    "entry": "handler3",
     "lambdas": ["saveS3"]
   }
 ]
