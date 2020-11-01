@@ -55,7 +55,7 @@ const internalHandler = async (event, context) => {
       await browser.close();
     }
   }
-  return { result, result2 };
+  return { result1, result2 };
 };
 
 exports.handler = async (event, context, callback) => {

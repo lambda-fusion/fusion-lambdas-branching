@@ -1,1 +1,1 @@
-{ "resize": ["saveS3"], "resize2": ["saveS3"], "screenshot": ["resize"] }
+{"resize":["saveS3"],"resize2":["saveS3"],"screenshot":["resize","resize2"]}
