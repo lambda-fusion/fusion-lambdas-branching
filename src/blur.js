@@ -42,7 +42,7 @@ const internalHandler = async (event, context) => {
   ).toString("base64");
 
   result = await fusion.invokeFunctionSync(
-    { source: "resize", target: "saveS3", context, traceId },
+    { source: "blur", target: "saveS3", context, traceId },
     resizedBase64,
     traceId
   );

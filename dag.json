@@ -1,1 +1,1 @@
-{"resize":["saveS3"],"resize2":["saveS3"],"screenshot":["resize","resize2"]}
+{"blur":["saveS3"],"flip":["saveS3"],"screenshot":["blur","flip"]}

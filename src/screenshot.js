@@ -40,12 +40,12 @@ const internalHandler = async (event, context) => {
     result = await Promise.all(
       [
         fusion.invokeFunctionSync(
-          { source: "screenshot", target: "resize", context, traceId },
+          { source: "screenshot", target: "blur", context, traceId },
           base64img
         ),
       ],
       fusion.invokeFunctionSync(
-        { source: "screenshot", target: "resize2", context, traceId },
+        { source: "screenshot", target: "flip", context, traceId },
         base64img
       )
     );
