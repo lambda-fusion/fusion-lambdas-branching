@@ -32,7 +32,7 @@ functions:
     timeout: 60
     events:
       - schedule:
-          rate: rate(5 minutes)
+          rate: rate(1 minute)
           enabled: true
           input:
             target: screenshot
@@ -42,7 +42,7 @@ functions:
     timeout: 60
     events:
       - schedule:
-          rate: rate(5 minutes)
+          rate: rate(1 minute)
           enabled: true
           input:
             target: screenshot
@@ -52,7 +52,7 @@ functions:
     timeout: 60
     events:
       - schedule:
-          rate: rate(5 minutes)
+          rate: rate(1 minute)
           enabled: true
           input:
             target: screenshot
