@@ -1,1 +1,1 @@
-{"blur":["saveS3"],"flip":["saveS3"],"screenshot":["blur","flip"]}
+{ "blur": ["saveS3"], "flip": ["saveS3"], "screenshot": ["blur", "flip"] }
