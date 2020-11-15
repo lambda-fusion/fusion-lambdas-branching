@@ -11,7 +11,7 @@ exports.handler = async (event, context, callback) => {
     callback,
     handler: internalHandler,
     traceId,
-    lambdaName: "resize2",
+    lambdaName: "flip",
   });
 };
 
