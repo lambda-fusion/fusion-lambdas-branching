@@ -37,18 +37,16 @@ const internalHandler = async (event, context) => {
 
     console.log("successfully captured screenshot");
 
-    result = await Promise.all(
-      [
-        fusion.invokeFunctionSync(
-          { source: "screenshot", target: "blur", context, traceId },
-          base64img
-        ),
-      ],
+    result = await Promise.all([
+      fusion.invokeFunctionSync(
+        { source: "screenshot", target: "blur", context, traceId },
+        base64img
+      ),
       fusion.invokeFunctionSync(
         { source: "screenshot", target: "flip", context, traceId },
         base64img
-      )
-    );
+      ),
+    ]);
   } catch (error) {
     throw error;
   } finally {

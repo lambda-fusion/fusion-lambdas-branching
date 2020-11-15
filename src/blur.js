@@ -2,9 +2,8 @@ const sharp = require("sharp");
 const { FunctionFusion, handlerWrapper } = require("aws-lambda-fusion");
 const fetch = require("node-fetch");
 
-let traceId;
 exports.handler = async (event, context, callback) => {
-  traceId = event.traceId;
+  const traceId = event.traceId;
   return handlerWrapper({
     event,
     context,
@@ -16,6 +15,7 @@ exports.handler = async (event, context, callback) => {
 };
 
 const internalHandler = async (event, context) => {
+  const traceId = event.traceId;
   const response = await fetch(
     "https://fusion-config.s3.eu-central-1.amazonaws.com/fusionConfiguration.json"
   );
