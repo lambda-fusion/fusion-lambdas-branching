@@ -5,11 +5,11 @@
   },
   {
     "entry": "handler1",
-    "lambdas": ["resize"]
+    "lambdas": ["blur"]
   },
   {
     "entry": "handler2",
-    "lambdas": ["resize2"]
+    "lambdas": ["flip"]
   },
   {
     "entry": "handler3",
